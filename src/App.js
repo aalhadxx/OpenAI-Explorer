@@ -52,7 +52,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Bol ke dikhaungi</h1>
+      <h1>TTS - aalhadxx</h1>
       <textarea
         value={textInput}
         onChange={(e) => setTextInput(e.target.value)}
