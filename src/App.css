@@ -1,68 +1,94 @@
-/* Define the color variables */
 :root {
-  --deep-purple: #673AB7;
-  --dark-purple: #512DA8;
-  --medium-purple: #9C27B0;
-  --light-purple: #E1BEE7;
-  --lavender: #9575CD;
+  --primary-color: #64c2ec;
+  --secondary-color: #277ca5;
+  --accent-color: #b8f5ff;
+  --dark-text-color: #113547;
+  --black-color: #000000;
 }
 
-/* Apply styles to the entire body */
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--light-purple);
-  color: var(--deep-purple);
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  background-color: var(--accent-color);
+  color: var(--dark-text-color);
 }
 
-/* Style the main heading */
-h1 {
-  color: var(--medium-purple);
-  text-align: center;
+/* Navbar container */
+.nav-container {
+  background-color: var(--primary-color);
+  padding: 15px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
-/* Style the textarea */
-textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 2px solid var(--dark-purple);
-  border-radius: 5px;
-  resize: vertical;
+
+/* Navbar styles */
+nav {
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Style the button */
-button {
-  background-color: var(--deep-purple);
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--accent-color);
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
   cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 20px;
 }
 
-button:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-/* Style the audio player */
-audio {
-  width: 100%;
-  margin-top: 20px;
-}
-
-/* Media queries for responsiveness */
-@media screen and (max-width: 600px) {
-  /* Adjust styles for smaller screens */
-  textarea {
-    width: calc(100% - 20px);
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
   }
-  
-  button {
-    width: calc(100% - 20px);
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  ul.show {
+    display: flex;
   }
 }
+
+/* Other styles */
+/* Add more styles for different elements as needed */
